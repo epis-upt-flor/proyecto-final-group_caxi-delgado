@@ -6,9 +6,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.xnical.combigo.presentation.navigation.Graph
 import com.xnical.combigo.presentation.navigation.screen.AuthScreen
+import com.xnical.combigo.presentation.screens.admin.home.AdminHomeScreen
 import com.xnical.combigo.presentation.screens.auth.login.LoginScreen
 import com.xnical.combigo.presentation.screens.auth.register.RegisterScreen
-import com.xnical.combigo.presentation.screens.home.HomeScreen
+import com.xnical.combigo.presentation.screens.client.home.ClientHomeScreen
+
+
 import com.xnical.combigo.presentation.screens.roles.RolesScreen
 
 fun NavGraphBuilder.AuthNavGraph(navController: NavHostController){
@@ -22,11 +25,7 @@ fun NavGraphBuilder.AuthNavGraph(navController: NavHostController){
         composable(route = AuthScreen.Register.route) {
             RegisterScreen(navController)
         }
-        composable(route = AuthScreen.Home.route) {
-            HomeScreen(navController)
-        }
-        composable(route = AuthScreen.Roles.route) {
-            RolesScreen(navController)
-        }
+
+
     }
 }

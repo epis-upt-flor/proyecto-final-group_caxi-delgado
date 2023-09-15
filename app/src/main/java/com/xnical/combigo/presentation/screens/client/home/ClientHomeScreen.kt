@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.home
+package com.xnical.combigo.presentation.screens.client.home
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
@@ -8,11 +8,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun ClientHomeScreen(navController: NavHostController) {
     Scaffold() { paddingValues ->
         Text(
             modifier = Modifier.padding(paddingValues = paddingValues),
-            text = "HomeScreen"
+            text = "CLIENT HomeScreen"
         )
     }
 }

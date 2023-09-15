@@ -23,13 +23,13 @@ fun Login(navController: NavHostController, vm: LoginViewModel = hiltViewModel()
             LaunchedEffect(Unit) {
                 vm.saveSession(response.data)
                 if(response.data.user?.roles!!.size   > 1){ // mas de un rol
-                    navController.navigate(route = AuthScreen.Roles.route){
-                        popUpTo(AuthScreen.Login.route) {inclusive = true}
+                    navController.navigate(route = Graph.ROLES){
+                        popUpTo(Graph.AUTH) {inclusive = true}
                     }
                 }
                 else{
-                    navController.navigate(route = AuthScreen.Home.route){
-                        popUpTo(AuthScreen.Login.route) {inclusive = true}
+                    navController.navigate(route = Graph.ROLES){
+                        popUpTo(Graph.AUTH) {inclusive = true}
                     }
                 }
 

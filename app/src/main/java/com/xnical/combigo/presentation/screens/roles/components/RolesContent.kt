@@ -18,11 +18,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.xnical.combigo.presentation.screens.roles.RolesViewModel
 
 @Composable
-fun RolesContent(paddingValues: PaddingValues, vm: RolesViewModel = hiltViewModel()) {
+fun RolesContent(paddingValues: PaddingValues,navController: NavHostController, vm: RolesViewModel = hiltViewModel()
+                 ) {
 
     val data = vm.authResponse.user
 
@@ -37,7 +39,7 @@ fun RolesContent(paddingValues: PaddingValues, vm: RolesViewModel = hiltViewMode
         items(
             items = data?.roles ?: arrayListOf()
         ) { rol ->
-            RolesItem(rol = rol)
+            RolesItem(rol = rol, navController = navController )
         }
 
 
