@@ -9,10 +9,10 @@ import com.xnical.combigo.presentation.screens.roles.components.RolesContent
 @Composable
 fun RolesScreen(navController: NavHostController) {
 
-    Scaffold(
-        topBar = { DefaultTopBar(title = "Selecciona un rol") }
+    Scaffold (
+        topBar = { DefaultTopBar(title = "Selecciona un rol")}
     ) { paddingValues ->
-        RolesContent(paddingValues)
+        RolesContent(paddingValues, navController)
     }
 
 }
