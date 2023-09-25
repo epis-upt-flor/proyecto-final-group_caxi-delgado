@@ -23,8 +23,7 @@ import coil.compose.AsyncImage
 import com.xnical.combigo.presentation.screens.roles.RolesViewModel
 
 @Composable
-fun RolesContent(paddingValues: PaddingValues,navController: NavHostController, vm: RolesViewModel = hiltViewModel()
-                 ) {
+fun RolesContent(paddingValues: PaddingValues,navController: NavHostController, vm: RolesViewModel = hiltViewModel()) {
 
     val data = vm.authResponse.user
 
@@ -41,7 +40,6 @@ fun RolesContent(paddingValues: PaddingValues,navController: NavHostController, 
         ) { rol ->
             RolesItem(rol = rol, navController = navController )
         }
-
 
     }
 }

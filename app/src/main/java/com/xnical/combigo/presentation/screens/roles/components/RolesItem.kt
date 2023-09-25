@@ -24,12 +24,13 @@ fun RolesItem (rol : Rol, navController: NavHostController){
 //            popUpTo(route = AuthScreen.Roles.route) {inclusive = true}
 //        }
     }){
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(25.dp))
         AsyncImage(
             modifier = Modifier
                 .height(150.dp)
                 .width(150.dp),
-            model = rol.image, contentDescription = ""
+            model = rol.image,
+            contentDescription = ""
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(

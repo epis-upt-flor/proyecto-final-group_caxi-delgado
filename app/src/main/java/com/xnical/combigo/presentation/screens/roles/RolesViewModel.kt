@@ -18,15 +18,13 @@ class RolesViewModel @Inject constructor(private val authUseCase : AuthUseCase) 
 
     var authResponse by mutableStateOf(AuthResponse())
 
-
     init {
         getSessionData()
     }
 
-
     fun getSessionData() = viewModelScope.launch {
         authUseCase.getSessionData().collect() { data ->
-            Log.d("LoginViewModel", "Data: ${data.toJson()}")
+            //Log.d("LoginViewModel", "Data: ${data.toJson()}")
             if (!data.token.isNullOrBlank()) {
                 authResponse = data
             }
