@@ -6,6 +6,7 @@ import com.xnical.combigo.domain.repository.AuthRepository
 import com.xnical.combigo.domain.use_cases.auth.AuthUseCase
 import com.xnical.combigo.domain.use_cases.auth.GetSessionDataUseCase
 import com.xnical.combigo.domain.use_cases.auth.LoginUseCase
+import com.xnical.combigo.domain.use_cases.auth.LogoutUseCase
 import com.xnical.combigo.domain.use_cases.auth.RegisterUseCase
 import com.xnical.combigo.domain.use_cases.auth.SaveSessionUseCase
 import dagger.Module
@@ -22,7 +23,8 @@ object UseCaseModule {
         login = LoginUseCase(authRepository),
         register = RegisterUseCase(authRepository),
         saveSession = SaveSessionUseCase(authRepository),
-        getSessionData = GetSessionDataUseCase(authRepository)
+        getSessionData = GetSessionDataUseCase(authRepository),
+        logout = LogoutUseCase(authRepository)
     )
 
 }

@@ -30,16 +30,22 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
+import com.xnical.combigo.presentation.MainActivity
+import com.xnical.combigo.presentation.components.DefaultButton
+import com.xnical.combigo.presentation.screens.profile.ProfileViewModel
 
 @Composable
-fun ProfileContent(paddingValues: PaddingValues, ) {
+fun ProfileContent(paddingValues: PaddingValues, vm: ProfileViewModel = hiltViewModel()) {
     val activity = LocalContext.current as? Activity
 
-    Text(
-        modifier = Modifier.padding(paddingValues = paddingValues),
-        text = "Profile xddd"
-    )
-
-
+  DefaultButton(
+      modifier = Modifier.padding(paddingValues = paddingValues),
+      text = "Cerrar sesion",
+      onClick = {
+          vm.logout()
+          activity?.finish()
+          activity?.startActivity(Intent(activity, MainActivity::class.java))
+      }
+  )
 }
 
