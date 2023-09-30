@@ -27,8 +27,8 @@ fun Login(navController: NavHostController, vm: LoginViewModel = hiltViewModel()
                         popUpTo(Graph.AUTH) {inclusive = true}
                     }
                 }
-                else{
-                    navController.navigate(route = Graph.ROLES){
+                else{ // UN SOLO ROL
+                    navController.navigate(route = Graph.CLIENT){
                         popUpTo(Graph.AUTH) {inclusive = true}
                     }
                 }

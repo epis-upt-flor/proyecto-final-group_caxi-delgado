@@ -5,11 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
 import com.xnical.combigo.presentation.navigation.screen.RolesScreen
-
-import com.xnical.combigo.presentation.screens.auth.login.LoginScreen
-
+import com.xnical.combigo.presentation.screens.admin.home.AdminHomeScreen
+import com.xnical.combigo.presentation.screens.client.home.ClientHomeScreen
 
 
 import com.xnical.combigo.presentation.screens.roles.RolesScreen
@@ -23,7 +21,12 @@ fun NavGraphBuilder.RolesNavGraph(navController: NavHostController){
             RolesScreen(navController)
         }
 
+        composable(route= Graph.CLIENT){
+            ClientHomeScreen()
+        }
 
-
+        composable(route= Graph.ADMIN){
+            AdminHomeScreen()
+        }
     }
 }

@@ -21,10 +21,9 @@ fun Register(navController: NavHostController, vm: RegisterViewModel = hiltViewM
         is Resource.Success -> {
             LaunchedEffect(Unit) {
                 vm.saveSession(response.data)
-    //            navController.navigate(route = AuthScreen.Home.route){
-      //              popUpTo(AuthScreen.Login.route) {inclusive = true}
-        //        }
-               // { popUpTo(Graph.AUTH) { inclusive = true } }
+                navController.navigate(route = Graph.CLIENT){
+                    popUpTo(Graph.AUTH) {inclusive = true}
+                }
             }
         }
         is Resource.Failure -> {
