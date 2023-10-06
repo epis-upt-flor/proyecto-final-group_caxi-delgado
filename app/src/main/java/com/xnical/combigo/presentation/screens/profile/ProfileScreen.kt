@@ -6,11 +6,11 @@ import androidx.navigation.NavHostController
 import com.xnical.combigo.presentation.screens.profile.components.ProfileContent
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(navController: NavHostController) {
 
     Scaffold(
     ) {paddingValues ->
-        ProfileContent(paddingValues = paddingValues)
+        ProfileContent(paddingValues = paddingValues, navController = navController)
     }
 
 }

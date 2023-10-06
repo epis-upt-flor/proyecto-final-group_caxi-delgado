@@ -27,7 +27,7 @@ fun AdminNavGraph(navController: NavHostController){
         }
 
         composable(route = AdminScreen.Profile.route) {
-            ProfileScreen()
+            ProfileScreen(navController)
         }
     }
 }
