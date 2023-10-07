@@ -1,11 +1,11 @@
-package com.xnical.combigo.presentation.navigation.graph
+package com.xnical.combigo.presentation.navigation.graph.roles
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.RolesScreen
+import com.xnical.combigo.presentation.navigation.screen.roles.RolesScreen
 import com.xnical.combigo.presentation.screens.admin.home.AdminHomeScreen
 import com.xnical.combigo.presentation.screens.client.home.ClientHomeScreen
 

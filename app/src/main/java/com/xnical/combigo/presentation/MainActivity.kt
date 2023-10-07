@@ -6,12 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.xnical.combigo.presentation.navigation.graph.RootNavGraph
+import com.xnical.combigo.presentation.navigation.graph.root.RootNavGraph
 import com.xnical.combigo.presentation.ui.theme.CombiGoTheme
 import dagger.hilt.android.AndroidEntryPoint
 

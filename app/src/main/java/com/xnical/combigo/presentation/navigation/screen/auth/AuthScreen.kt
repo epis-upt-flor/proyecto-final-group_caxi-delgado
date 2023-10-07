@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.navigation.screen
+package com.xnical.combigo.presentation.navigation.screen.auth
 
 sealed class AuthScreen(val route: String) {
 

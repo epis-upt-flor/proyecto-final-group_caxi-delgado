@@ -16,7 +16,6 @@ import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.xnical.combigo.domain.model.Rol
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
 
 @Composable
 fun RolesItem (rol : Rol, navController: NavHostController){

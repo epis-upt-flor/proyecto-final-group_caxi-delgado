@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.navigation.graph
+package com.xnical.combigo.presentation.navigation.graph.client
 
 import androidx.compose.runtime.Composable
 
@@ -6,10 +6,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.ClientScreen
+import com.xnical.combigo.presentation.navigation.graph.profile.ProfileNavGraph
+import com.xnical.combigo.presentation.navigation.screen.client.ClientScreen
 import com.xnical.combigo.presentation.screens.client.clinic.list.ClientClinicListScreen
 import com.xnical.combigo.presentation.screens.client.patient.list.ClientPatientListScreen
-import com.xnical.combigo.presentation.screens.profile.ProfileScreen
+import com.xnical.combigo.presentation.screens.profile.info.ProfileScreen
 
 @Composable
 fun ClientNavGraph(navController: NavHostController){
@@ -29,5 +30,7 @@ fun ClientNavGraph(navController: NavHostController){
         composable(route = ClientScreen.Profile.route) {
             ProfileScreen(navController)
         }
+
+        ProfileNavGraph(navController)
     }
 }

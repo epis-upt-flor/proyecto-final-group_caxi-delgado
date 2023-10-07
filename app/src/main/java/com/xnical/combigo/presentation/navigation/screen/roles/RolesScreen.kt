@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.navigation.screen
+package com.xnical.combigo.presentation.navigation.screen.roles
 
 sealed class RolesScreen(val route : String){
 

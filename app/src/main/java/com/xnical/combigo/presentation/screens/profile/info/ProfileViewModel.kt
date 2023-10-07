@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.profile
+package com.xnical.combigo.presentation.screens.profile.info
 
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel

@@ -9,7 +9,6 @@ import androidx.navigation.NavHostController
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.presentation.components.ProgressBar
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
 import com.xnical.combigo.presentation.screens.auth.login.LoginViewModel
 
 @Composable

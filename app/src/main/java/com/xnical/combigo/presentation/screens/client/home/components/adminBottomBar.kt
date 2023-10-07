@@ -4,7 +4,7 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.runtime.*
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.xnical.combigo.presentation.navigation.screen.ClientScreen
+import com.xnical.combigo.presentation.navigation.screen.client.ClientScreen
 
 @Composable
 fun ClientBottomBar(navController: NavHostController){

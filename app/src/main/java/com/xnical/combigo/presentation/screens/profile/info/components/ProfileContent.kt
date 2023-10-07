@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.profile.components
+package com.xnical.combigo.presentation.screens.profile.info.components
 
 import android.app.Activity
 import android.content.Intent
@@ -34,7 +34,7 @@ import com.xnical.combigo.R
 import com.xnical.combigo.presentation.MainActivity
 import com.xnical.combigo.presentation.components.DefaultButton
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.screens.profile.ProfileViewModel
+import com.xnical.combigo.presentation.screens.profile.info.ProfileViewModel
 
 @Composable
 fun ProfileContent(paddingValues: PaddingValues, navController: NavHostController, vm: ProfileViewModel = hiltViewModel()) {
@@ -194,25 +194,5 @@ fun ProfileContent(paddingValues: PaddingValues, navController: NavHostControlle
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-  //DefaultButton(
-  //    modifier = Modifier.padding(paddingValues = paddingValues),
-  //    text = "Cerrar sesion",
-  //    onClick = {
-   //       vm.logout()
-  //        activity?.finish()
-  //        activity?.startActivity(Intent(activity, MainActivity::class.java))
-  //    }
- // )
 }
 
