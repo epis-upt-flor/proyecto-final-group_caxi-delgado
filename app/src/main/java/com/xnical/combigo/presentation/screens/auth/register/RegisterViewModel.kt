@@ -17,7 +17,6 @@ import javax.inject.Inject
 class RegisterViewModel @Inject constructor(private val authUseCase: AuthUseCase): ViewModel() {
 
     var state by mutableStateOf(RegisterState())
-        private set
     var registerResponse by mutableStateOf<Resource<AuthResponse>?>(null)
         private set
     var errorMessage by mutableStateOf("")
