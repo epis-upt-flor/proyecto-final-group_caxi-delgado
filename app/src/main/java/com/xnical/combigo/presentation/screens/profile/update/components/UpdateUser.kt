@@ -3,7 +3,6 @@ package com.xnical.combigo.presentation.screens.profile.update.components
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -21,8 +20,7 @@ fun UpdateUser(vm: ProfileUpdateViewModel = hiltViewModel()) {
         }
         is Resource.Success -> {
             // 401 TOKEN
-           // Log.d("" +
-            //        "", "Data: ${response.data}")
+            Log.d("UpdateUser", "Data: ${response.data}")
             vm.updateUserSession(response.data)
             Toast.makeText(LocalContext.current, "Los datos se han actualizado correctamete", Toast.LENGTH_LONG).show()
         }

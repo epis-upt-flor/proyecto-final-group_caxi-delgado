@@ -37,7 +37,7 @@ import com.xnical.combigo.presentation.components.DialogCapturePicture
 import com.xnical.combigo.presentation.screens.profile.update.ProfileUpdateViewModel
 
 @Composable
-fun ProfileUpdateContent(paddingValues: PaddingValues, navController: NavHostController, vm: ProfileUpdateViewModel = hiltViewModel()) {
+fun ProfileUpdateContent(paddingValues: PaddingValues, vm: ProfileUpdateViewModel = hiltViewModel()) {
     val activity = LocalContext.current as? Activity
     val state = vm.state
     val stateDialog = remember { mutableStateOf(false) }
