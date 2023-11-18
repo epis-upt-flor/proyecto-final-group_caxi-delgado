@@ -1,10 +1,12 @@
-package com.xnical.combigo.presentation.navigation.graph
+package com.xnical.combigo.presentation.navigation.graph.root
 
 import androidx.compose.runtime.Composable
 
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.xnical.combigo.presentation.navigation.Graph
+import com.xnical.combigo.presentation.navigation.graph.auth.AuthNavGraph
+import com.xnical.combigo.presentation.navigation.graph.roles.RolesNavGraph
 
 @Composable
 fun RootNavGraph(navController: NavHostController){

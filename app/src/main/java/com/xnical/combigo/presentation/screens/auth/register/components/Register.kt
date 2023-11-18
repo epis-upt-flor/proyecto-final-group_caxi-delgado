@@ -10,7 +10,6 @@ import com.xnical.combigo.domain.util.Resource
 
 import com.xnical.combigo.presentation.components.ProgressBar
 import com.xnical.combigo.presentation.navigation.Graph
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
 import com.xnical.combigo.presentation.screens.auth.register.RegisterViewModel
 
 @Composable
@@ -21,10 +20,9 @@ fun Register(navController: NavHostController, vm: RegisterViewModel = hiltViewM
         is Resource.Success -> {
             LaunchedEffect(Unit) {
                 vm.saveSession(response.data)
-    //            navController.navigate(route = AuthScreen.Home.route){
-      //              popUpTo(AuthScreen.Login.route) {inclusive = true}
-        //        }
-               // { popUpTo(Graph.AUTH) { inclusive = true } }
+                navController.navigate(route = Graph.CLIENT){
+                    popUpTo(Graph.AUTH) {inclusive = true}
+                }
             }
         }
         is Resource.Failure -> {

@@ -1,5 +1,6 @@
 package com.xnical.combigo.presentation.screens.roles.components
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -14,15 +15,16 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.xnical.combigo.domain.model.Rol
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
+import com.xnical.combigo.presentation.navigation.Graph
 
 @Composable
 fun RolesItem (rol : Rol, navController: NavHostController){
 
     Column (modifier = Modifier.clickable {
-//        navController.navigate(route = rol.route){
-//            popUpTo(route = AuthScreen.Roles.route) {inclusive = true}
-//        }
+        Log.d( "RolesItem", "Ruta: ${rol.route}")
+        navController.navigate(route = rol.route){
+            popUpTo(route = Graph.ROLES) {inclusive = true}
+        }
     }){
         Spacer(modifier = Modifier.height(25.dp))
         AsyncImage(

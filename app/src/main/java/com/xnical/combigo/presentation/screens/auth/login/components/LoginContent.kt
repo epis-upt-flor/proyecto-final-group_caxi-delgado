@@ -41,7 +41,7 @@ import androidx.navigation.NavHostController
 import com.xnical.combigo.R
 import com.xnical.combigo.presentation.components.DefaultButton
 import com.xnical.combigo.presentation.components.DefaultTextField
-import com.xnical.combigo.presentation.navigation.screen.AuthScreen
+import com.xnical.combigo.presentation.navigation.screen.auth.AuthScreen
 import com.xnical.combigo.presentation.screens.auth.login.LoginViewModel
 
 @Composable
