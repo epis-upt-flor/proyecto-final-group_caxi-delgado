@@ -1,7 +1,7 @@
 package com.xnical.combigo.data.repository
 
-import com.xnical.combigo.data.repository.dataSource.AuthLocalDataSource
-import com.xnical.combigo.data.repository.dataSource.AuthRemoteDataSource
+import com.xnical.combigo.data.dataSource.local.AuthLocalDataSource
+import com.xnical.combigo.data.dataSource.remote.AuthRemoteDataSource
 import com.xnical.combigo.domain.model.AuthResponse
 import com.xnical.combigo.domain.model.User
 import com.xnical.combigo.domain.repository.AuthRepository

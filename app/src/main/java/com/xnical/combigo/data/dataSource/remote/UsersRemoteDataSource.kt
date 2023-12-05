@@ -1,4 +1,4 @@
-package com.xnical.combigo.data.repository.dataSource
+package com.xnical.combigo.data.dataSource.remote
 
 import com.xnical.combigo.domain.model.AuthResponse
 import com.xnical.combigo.domain.model.User

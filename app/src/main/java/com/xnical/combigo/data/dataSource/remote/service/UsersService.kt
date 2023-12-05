@@ -1,4 +1,4 @@
-package com.xnical.combigo.data.service
+package com.xnical.combigo.data.dataSource.remote.service
 
 import com.xnical.combigo.domain.model.User
 import okhttp3.MultipartBody

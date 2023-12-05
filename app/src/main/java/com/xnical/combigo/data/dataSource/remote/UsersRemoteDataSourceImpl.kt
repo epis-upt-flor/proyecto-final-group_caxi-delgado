@@ -1,8 +1,8 @@
-package com.xnical.combigo.data.repository.dataSourceImpl
+package com.xnical.combigo.data.dataSource.remote
 
 
-import com.xnical.combigo.data.repository.dataSource.UsersRemoteDataSource
-import com.xnical.combigo.data.service.UsersService
+import com.xnical.combigo.data.dataSource.remote.UsersRemoteDataSource
+import com.xnical.combigo.data.dataSource.remote.service.UsersService
 import com.xnical.combigo.domain.model.User
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody

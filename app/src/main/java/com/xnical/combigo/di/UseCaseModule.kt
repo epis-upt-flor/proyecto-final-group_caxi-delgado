@@ -1,6 +1,7 @@
 package com.xnical.combigo.di
 
 import com.xnical.combigo.domain.repository.AuthRepository
+import com.xnical.combigo.domain.repository.ClinicsRepository
 import com.xnical.combigo.domain.repository.UsersRepository
 import com.xnical.combigo.domain.use_cases.auth.AuthUseCase
 import com.xnical.combigo.domain.use_cases.auth.GetSessionDataUseCase
@@ -9,6 +10,12 @@ import com.xnical.combigo.domain.use_cases.auth.LogoutUseCase
 import com.xnical.combigo.domain.use_cases.auth.RegisterUseCase
 import com.xnical.combigo.domain.use_cases.auth.SaveSessionUseCase
 import com.xnical.combigo.domain.use_cases.auth.UpdateSessionUseCase
+import com.xnical.combigo.domain.use_cases.clinics.ClinicsUseCase
+import com.xnical.combigo.domain.use_cases.clinics.CreateClinicUseCase
+import com.xnical.combigo.domain.use_cases.clinics.DeleteClinicUseCase
+import com.xnical.combigo.domain.use_cases.clinics.GetClinicUseCase
+import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicUseCase
+import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicWithImageUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserWithImageUseCase
 import com.xnical.combigo.domain.use_cases.users.UsersUseCase
@@ -35,6 +42,15 @@ object UseCaseModule {
     fun provideUsersUseCase(usersRepository: UsersRepository) = UsersUseCase(
         updateUser = UpdateUserUseCase(usersRepository),
         updateUserWithImage = UpdateUserWithImageUseCase(usersRepository)
+    )
+
+    @Provides
+    fun provideClinicsUseCase(clinicsRepository: ClinicsRepository) = ClinicsUseCase(
+        createClinic = CreateClinicUseCase(clinicsRepository),
+        getClinics = GetClinicUseCase(clinicsRepository),
+        updateClinic = UpdateClinicUseCase(clinicsRepository),
+        updateClinicWithImage = UpdateClinicWithImageUseCase(clinicsRepository),
+        deleteClinic = DeleteClinicUseCase(clinicsRepository)
     )
 
 }
