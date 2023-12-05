@@ -1,4 +1,4 @@
-package com.xnical.combigo.data.datastore
+package com.xnical.combigo.data.dataSource.local.datastore
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

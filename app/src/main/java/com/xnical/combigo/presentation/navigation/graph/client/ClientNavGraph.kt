@@ -24,7 +24,7 @@ fun ClientNavGraph(navController: NavHostController){
         }
 
         composable(route = ClientScreen.ClinicList.route) {
-            ClientClinicListScreen()
+            ClientClinicListScreen(navController)
         }
 
         composable(route = ClientScreen.Profile.route) {

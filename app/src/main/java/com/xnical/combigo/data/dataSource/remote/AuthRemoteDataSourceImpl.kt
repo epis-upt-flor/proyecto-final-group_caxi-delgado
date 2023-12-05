@@ -1,7 +1,7 @@
-package com.xnical.combigo.data.repository.dataSourceImpl
+package com.xnical.combigo.data.dataSource.remote
 
-import com.xnical.combigo.data.repository.dataSource.AuthRemoteDataSource
-import com.xnical.combigo.data.service.AuthService
+import com.xnical.combigo.data.dataSource.remote.AuthRemoteDataSource
+import com.xnical.combigo.data.dataSource.remote.service.AuthService
 import com.xnical.combigo.domain.model.AuthResponse
 import com.xnical.combigo.domain.model.User
 import retrofit2.Response

@@ -1,8 +1,11 @@
 package com.xnical.combigo.di
 
-import com.xnical.combigo.data.repository.dataSource.AuthLocalDataSource
-import com.xnical.combigo.data.repository.dataSourceImpl.AuthLocalDataSourceImpl
-import com.xnical.combigo.data.datastore.AuthDatastore
+import com.xnical.combigo.data.dataSource.local.AuthLocalDataSource
+import com.xnical.combigo.data.dataSource.local.AuthLocalDataSourceImpl
+import com.xnical.combigo.data.dataSource.local.ClinicsLocalDataSource
+import com.xnical.combigo.data.dataSource.local.ClinicsLocalDataSourceImpl
+import com.xnical.combigo.data.dataSource.local.dao.ClinicsDao
+import com.xnical.combigo.data.dataSource.local.datastore.AuthDatastore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +17,8 @@ object LocalDataModule {
 
     @Provides
     fun provideAuthLocalDataSource(authDatastore: AuthDatastore): AuthLocalDataSource = AuthLocalDataSourceImpl(authDatastore)
+
+    @Provides
+    fun provideClinicsLocalDataSource(clinicsDao: ClinicsDao): ClinicsLocalDataSource = ClinicsLocalDataSourceImpl(clinicsDao)
 
 }

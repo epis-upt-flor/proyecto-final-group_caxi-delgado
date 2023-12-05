@@ -24,7 +24,7 @@ fun AdminNavGraph(navController: NavHostController){
         }
 
         composable(route = AdminScreen.ClinicList.route) {
-            AdminClinicListScreen()
+            AdminClinicListScreen(navController)
         }
 
         composable(route = AdminScreen.Profile.route) {
@@ -32,5 +32,6 @@ fun AdminNavGraph(navController: NavHostController){
         }
 
         ProfileNavGraph(navController)
+        AdminClinicNavGraph(navController)
     }
 }

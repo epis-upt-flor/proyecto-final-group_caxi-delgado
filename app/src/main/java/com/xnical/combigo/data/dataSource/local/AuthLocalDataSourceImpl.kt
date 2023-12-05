@@ -1,7 +1,7 @@
-package com.xnical.combigo.data.repository.dataSourceImpl
+package com.xnical.combigo.data.dataSource.local
 
-import com.xnical.combigo.data.repository.dataSource.AuthLocalDataSource
-import com.xnical.combigo.data.datastore.AuthDatastore
+import com.xnical.combigo.data.dataSource.local.AuthLocalDataSource
+import com.xnical.combigo.data.dataSource.local.datastore.AuthDatastore
 import com.xnical.combigo.domain.model.AuthResponse
 import com.xnical.combigo.domain.model.User
 import kotlinx.coroutines.flow.Flow
