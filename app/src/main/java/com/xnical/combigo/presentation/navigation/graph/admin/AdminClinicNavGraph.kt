@@ -10,6 +10,8 @@ import com.xnical.combigo.presentation.navigation.Graph
 import com.xnical.combigo.presentation.navigation.screen.admin.AdminClinicScreen
 import com.xnical.combigo.presentation.screens.admin.clinic.create.AdminClinicCreateScreen
 import com.xnical.combigo.presentation.screens.admin.clinic.update.AdminClinicUpdateScreen
+import com.xnical.combigo.presentation.screens.admin.patient.create.AdminPatientCreateScreen
+import com.xnical.combigo.presentation.screens.admin.patient.list.AdminPatientListScreen
 
 fun NavGraphBuilder.AdminClinicNavGraph(navController: NavHostController){
     navigation(
@@ -29,6 +31,28 @@ fun NavGraphBuilder.AdminClinicNavGraph(navController: NavHostController){
         ){
             it.arguments?.getString("clinic")?.let {
                 AdminClinicUpdateScreen(navController, it)
+            }
+        }
+
+        composable(
+            route = AdminClinicScreen.PatientList.route,
+            arguments = listOf(navArgument("clinic") {
+                type = NavType.StringType
+            })
+        ){
+            it.arguments?.getString("clinic")?.let {
+                AdminPatientListScreen(navController, it)
+            }
+        }
+
+        composable(
+            route = AdminClinicScreen.PatientCreate.route,
+            arguments = listOf(navArgument("clinic") {
+                type = NavType.StringType
+            })
+        ){
+            it.arguments?.getString("clinic")?.let {
+                AdminPatientCreateScreen(navController, it)
             }
         }
 

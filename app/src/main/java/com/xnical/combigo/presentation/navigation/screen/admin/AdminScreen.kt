@@ -16,11 +16,11 @@ sealed class AdminScreen(
         title = "Clinicas",
         icon = Icons.Default.List
     )
-    object PatientList : AdminScreen(
-        route = "admin/patient/list",
-        title = "Pacientes",
-        icon = Icons.Default.Face
-    )
+    //object PatientList : AdminScreen(
+    //    route = "admin/patient/list",
+    //    title = "Pacientes",
+    //    icon = Icons.Default.Face
+    //)
     object Profile : AdminScreen(
         route = "admin/profile",
         title = "Perfil",

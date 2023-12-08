@@ -36,7 +36,7 @@ fun AdminClinicListItem(navController: NavHostController, clinic: Clinic, vm: Ad
         Modifier
             .padding(start = 20.dp, end = 20.dp, top = 15.dp)
             .height(90.dp)
-            //.clickable { navController.navigate(route = AdminClinicScreen.ProductList.passCategory(category.toJson())) }
+            .clickable { navController.navigate(route = AdminClinicScreen.PatientList.passClinic(clinic.toJson())) }
     ) {
         Row() {
 

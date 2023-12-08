@@ -11,7 +11,7 @@ import com.xnical.combigo.presentation.navigation.screen.admin.AdminScreen
 fun AdminBottomBar(navController: NavHostController){
 
     val screens = listOf(
-        AdminScreen.PatientList,
+        //AdminScreen.PatientList,
         AdminScreen.ClinicList,
         AdminScreen.Profile,
     )
