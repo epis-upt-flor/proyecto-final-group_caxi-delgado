@@ -6,11 +6,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import com.xnical.combigo.presentation.components.DefaultTopBar
 import com.xnical.combigo.presentation.screens.admin.patient.create.components.AdminPatientCreateContent
+import com.xnical.combigo.presentation.screens.admin.patient.create.components.CreatePatient
 import com.xnical.combigo.presentation.ui.theme.Gray200
 
 @Composable
 fun AdminPatientCreateScreen(navController: NavHostController, clinicParam: String) {
-    Log.d("AdminPatientCreteScreen", "Clinic: ${clinicParam}")
+    Log.d("AdminPatientListScreen", "Clinic: ${clinicParam}")
 
     Scaffold(
         topBar = {
@@ -24,4 +25,5 @@ fun AdminPatientCreateScreen(navController: NavHostController, clinicParam: Stri
     ) {paddingValues ->
         AdminPatientCreateContent(paddingValues = paddingValues)
     }
+    CreatePatient()
 }

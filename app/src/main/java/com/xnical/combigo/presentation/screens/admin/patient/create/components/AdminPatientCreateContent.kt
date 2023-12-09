@@ -146,7 +146,7 @@ fun AdminPatientCreateContent(paddingValues: PaddingValues, vm: AdminPatientCrea
                     modifier = Modifier.fillMaxWidth(),
                     value = state.name,
                     onValueChange = { vm.onNameInput(it) },
-                    label = "Nombre de la clinica",
+                    label = "Nombre del paciente",
                     icon = Icons.Default.List
                 )
                 Spacer(modifier = Modifier.height(10.dp))
@@ -169,7 +169,7 @@ fun AdminPatientCreateContent(paddingValues: PaddingValues, vm: AdminPatientCrea
                 Spacer(modifier = Modifier.height(10.dp))
                 DefaultTextField(
                     modifier = Modifier.fillMaxWidth(),
-                    value = state.weight.toString(),
+                    value = state.age.toString(),
                     onValueChange = { vm.onAgeInput(it) },
                     label = "Edad",
                     icon = Icons.Outlined.Info,
@@ -179,7 +179,7 @@ fun AdminPatientCreateContent(paddingValues: PaddingValues, vm: AdminPatientCrea
                 DefaultButton(
                     modifier = Modifier.fillMaxWidth(),
                     text = "Crear paciente",
-                    onClick = {  }
+                    onClick = { vm.createPatient() }
                 )
             }
 

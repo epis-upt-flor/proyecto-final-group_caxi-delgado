@@ -7,7 +7,10 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xnical.combigo.domain.model.Clinic
+import com.xnical.combigo.domain.model.Patient
+import com.xnical.combigo.domain.use_cases.patients.PatientsUseCase
 import com.xnical.combigo.domain.util.Resource
+import com.xnical.combigo.presentation.screens.admin.patient.create.mapper.toPatient
 import com.xnical.combigo.presentation.util.ComposeFileProvider
 import com.xnical.combigo.presentation.util.ResultingActivityHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,13 +22,14 @@ import javax.inject.Inject
 @HiltViewModel
 class AdminPatientCreateViewModel @Inject constructor(
     @ApplicationContext val context: Context,
-    private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle,
+    private val patientsUseCase: PatientsUseCase
 ): ViewModel() {
 
     var state by mutableStateOf(AdminPatientCreateState())
         private set
 
-    var clinicResponse by mutableStateOf<Resource<Clinic>?>(null)
+    var patientResponse by mutableStateOf<Resource<Patient>?>(null)
         private set
 
     var data = savedStateHandle.get<String>("clinic")
@@ -39,6 +43,15 @@ class AdminPatientCreateViewModel @Inject constructor(
 
     init {
         state = state.copy(idClinic = clinic.id ?: "")
+    }
+
+    fun createPatient() = viewModelScope.launch {
+        if (file1 != null && file2 !== null) {
+            files = listOf(file1!!, file2!!)
+            patientResponse = Resource.Loading
+            val result = patientsUseCase.createPatient(state.toPatient(), files)
+            patientResponse = result
+        }
     }
 
     fun pickImage(imageNumber: Int) = viewModelScope.launch {
@@ -78,7 +91,7 @@ class AdminPatientCreateViewModel @Inject constructor(
             weight = 0.0,
             age = 0,
         )
-        //patientResponse = null
+        patientResponse = null
     }
 
     fun onNameInput(input: String) {
