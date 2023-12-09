@@ -16,6 +16,7 @@ import com.xnical.combigo.domain.model.Clinic
 import com.xnical.combigo.presentation.components.DefaultTopBar
 import com.xnical.combigo.presentation.navigation.screen.admin.AdminClinicScreen
 import com.xnical.combigo.presentation.screens.admin.patient.list.componets.AdminPatientListContent
+import com.xnical.combigo.presentation.screens.admin.patient.list.componets.GetPatients
 
 @Composable
 fun AdminPatientListScreen(navController: NavHostController, clinicParam: String) {
@@ -46,8 +47,8 @@ fun AdminPatientListScreen(navController: NavHostController, clinicParam: String
             }
         }
     ) { paddingValues ->
-        //GetCategories(paddingValues, navController)
-        AdminPatientListContent(paddingValues = paddingValues)
+        GetPatients(navController ,paddingValues)
+        //AdminPatientListContent(paddingValues = paddingValues)
     }
 
 }

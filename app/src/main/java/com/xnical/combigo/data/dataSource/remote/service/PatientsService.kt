@@ -16,13 +16,13 @@ import retrofit2.http.Path
 
 interface PatientsService {
 
-//    @GET("patients/clinic/{id_clinic}")
-//    suspend fun findByClinic(
-//        @Path("id_clinic") idClinic: String
-//    ): Response<List<Patient>>
-//
-//    @GET("patients")
-//    suspend fun findAll(): Response<List<Patient>>
+    @GET("patients/clinic/{id_clinic}")
+    suspend fun findByClinic(
+        @Path("id_clinic") idClinic: String
+    ): Response<List<Patient>>
+
+    //@GET("patients")
+    //suspend fun findAll(): Response<List<Patient>>
 
     @Multipart
     @POST("patients")

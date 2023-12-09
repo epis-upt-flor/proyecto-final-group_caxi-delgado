@@ -18,6 +18,7 @@ import com.xnical.combigo.domain.use_cases.clinics.GetClinicUseCase
 import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicUseCase
 import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicWithImageUseCase
 import com.xnical.combigo.domain.use_cases.patients.CreatePatientUseCase
+import com.xnical.combigo.domain.use_cases.patients.FindByClinicUseCase
 import com.xnical.combigo.domain.use_cases.patients.PatientsUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserWithImageUseCase
@@ -58,7 +59,8 @@ object UseCaseModule {
 
     @Provides
     fun providePatientsUseCase(patientsRepository: PatientsRepository) = PatientsUseCase(
-        createPatient = CreatePatientUseCase(patientsRepository)
+        createPatient = CreatePatientUseCase(patientsRepository),
+        findByClinic = FindByClinicUseCase(patientsRepository)
     )
 
 

@@ -18,9 +18,7 @@ class PatientsRemoteDataSourceImpl(private val patientsService: PatientsService)
         TODO("Not yet implemented")
     }
 
-    override suspend fun findByClinic(idClinic: String): Response<List<Patient>> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun findByClinic(idClinic: String): Response<List<Patient>> = patientsService.findByClinic(idClinic)
 
     override suspend fun create(patient: Patient, files: List<File>): Response<Patient> {
         val images = arrayOfNulls<MultipartBody.Part>(files.size)

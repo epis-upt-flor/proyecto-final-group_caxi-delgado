@@ -6,15 +6,16 @@ import com.xnical.combigo.domain.repository.PatientsRepository
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.domain.util.ResponseToRequest
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import java.io.File
 
-class PatientsRepositoryImpl(private val patientsRemoteDataSource: PatientsRemoteDataSource): PatientsRepository {
+class PatientsRepositoryImpl(private val remoteDataSource: PatientsRemoteDataSource): PatientsRepository {
     override fun findAll(): Flow<Resource<List<Patient>>> {
         TODO("Not yet implemented")
     }
 
-    override fun findByClinic(idClinic: String): Flow<Resource<List<Patient>>> {
-        TODO("Not yet implemented")
+    override fun findByClinic(idClinic: String): Flow<Resource<List<Patient>>> = flow {
+        emit(ResponseToRequest.send(remoteDataSource.findByClinic(idClinic)))
     }
 
     override fun findByName(name: String): Flow<Resource<List<Patient>>> {
@@ -22,7 +23,7 @@ class PatientsRepositoryImpl(private val patientsRemoteDataSource: PatientsRemot
     }
 
     override suspend fun create(patient: Patient, files: List<File>): Resource<Patient> = ResponseToRequest.send(
-        patientsRemoteDataSource.create(patient, files)
+        remoteDataSource.create(patient, files)
     )
 
     override suspend fun updateWithImage(
