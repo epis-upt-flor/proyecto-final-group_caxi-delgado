@@ -3,6 +3,7 @@ package com.xnical.combigo.di
 
 import com.xnical.combigo.data.dataSource.local.AuthLocalDataSource
 import com.xnical.combigo.data.dataSource.local.ClinicsLocalDataSource
+import com.xnical.combigo.data.dataSource.local.PatientsLocalDataSource
 import com.xnical.combigo.data.dataSource.remote.AuthRemoteDataSource
 import com.xnical.combigo.data.repository.AuthRepositoryImpl
 import com.xnical.combigo.data.repository.ClinicsRepositoryImpl
@@ -43,6 +44,7 @@ object RepositoryModule {
 
     @Provides
     fun providePatientsRepository(
-        patientsRemoteDataSource: PatientsRemoteDataSource
-    ): PatientsRepository = PatientsRepositoryImpl(patientsRemoteDataSource)
+        patientsRemoteDataSource: PatientsRemoteDataSource,
+        patientsLocalDataSource: PatientsLocalDataSource
+    ): PatientsRepository = PatientsRepositoryImpl(patientsRemoteDataSource, patientsLocalDataSource)
 }

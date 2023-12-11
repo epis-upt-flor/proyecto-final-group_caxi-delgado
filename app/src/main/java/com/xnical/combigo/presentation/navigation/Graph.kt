@@ -7,5 +7,7 @@ object Graph {
     const val CLIENT = "client_graph"
     const val ADMIN = "admin_graph"
     const val ADMIN_CLINIC = "admin_clinic_graph"
+    const val CLIENT_CLINIC = "client_clinic_graph"
+    const val CLIENT_PATIENT = "client_patient_graph"
     const val PROFILE = "profile_graph"
 }

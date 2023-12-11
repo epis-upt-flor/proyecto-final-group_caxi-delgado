@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.client.clinic.list.componets
+package com.xnical.combigo.presentation.screens.client.patient.list.componets
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.PaddingValues
@@ -8,16 +8,17 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.presentation.components.ProgressBar
-import com.xnical.combigo.presentation.screens.client.clinic.list.ClientClinicListViewModel
+import com.xnical.combigo.presentation.screens.admin.patient.list.AdminPatientListViewModel
+import com.xnical.combigo.presentation.screens.client.patient.list.ClientPatientListViewModel
 
 @Composable
-fun GetClinics(paddingValues: PaddingValues, navController: NavHostController, vm: ClientClinicListViewModel = hiltViewModel()) {
-    when(val response = vm.clinicsResponse) {
+fun GetPatients(navController: NavHostController, paddingValues: PaddingValues, vm: ClientPatientListViewModel = hiltViewModel()) {
+    when(val response = vm.patientsResponse) {
         Resource.Loading -> {
             ProgressBar()
         }
         is Resource.Success -> {
-            ClientClinicListContent(paddingValues, navController, clinics = response.data )
+            ClientPatientListContent(navController = navController, paddingValues = paddingValues , patients = response.data)
         }
         is Resource.Failure -> {
             Toast.makeText(LocalContext.current, response.message, Toast.LENGTH_LONG).show()

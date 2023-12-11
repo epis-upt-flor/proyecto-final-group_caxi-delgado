@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.admin.patient.list
+package com.xnical.combigo.presentation.screens.client.patient.listByClinic
 
 import android.util.Log
 import androidx.compose.foundation.layout.padding
@@ -15,12 +15,12 @@ import androidx.navigation.NavHostController
 import com.xnical.combigo.domain.model.Clinic
 import com.xnical.combigo.presentation.components.DefaultTopBar
 import com.xnical.combigo.presentation.navigation.screen.admin.AdminClinicScreen
-import com.xnical.combigo.presentation.screens.admin.patient.list.componets.AdminPatientListContent
 import com.xnical.combigo.presentation.screens.admin.patient.list.componets.DeletePatients
 import com.xnical.combigo.presentation.screens.admin.patient.list.componets.GetPatients
+import com.xnical.combigo.presentation.screens.client.patient.listByClinic.componets.GetPatientsByClinic
 
 @Composable
-fun AdminPatientListScreen(navController: NavHostController, clinicParam: String) {
+fun ClientPatientByClinicListScreen(navController: NavHostController, clinicParam: String) {
     Log.d("AdminPatientListScreen", "Clinic: ${clinicParam}")
     val clinicParse = Clinic.fromJson(clinicParam).toJson()
 
@@ -32,25 +32,8 @@ fun AdminPatientListScreen(navController: NavHostController, clinicParam: String
                 upAvailable = true
             )
         },
-        floatingActionButton = {
-            FloatingActionButton(
-                modifier = Modifier.padding(bottom = 20.dp),
-                onClick = {
-                    navController.navigate(route = AdminClinicScreen.PatientCreate.passClinic(clinicParse))
-                },
-                backgroundColor = Color.DarkGray
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "",
-                    tint = Color.White
-                )
-            }
-        }
-    ) { paddingValues ->
-        GetPatients(navController = navController, paddingValues = paddingValues)
-        //AdminPatientListContent(paddingValues = paddingValues)
-    }
-    DeletePatients()
 
+    ) { paddingValues ->
+        GetPatientsByClinic(navController = navController, paddingValues = paddingValues)
+    }
 }

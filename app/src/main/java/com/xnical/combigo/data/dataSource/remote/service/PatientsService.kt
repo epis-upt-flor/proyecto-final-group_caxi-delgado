@@ -21,8 +21,8 @@ interface PatientsService {
         @Path("id_clinic") idClinic: String
     ): Response<List<Patient>>
 
-    //@GET("patients")
-    //suspend fun findAll(): Response<List<Patient>>
+    @GET("patients")
+    suspend fun findAll(): Response<List<Patient>>
 
     @Multipart
     @POST("patients")
@@ -35,27 +35,28 @@ interface PatientsService {
         @Part("age") age: RequestBody
     ): Response<Patient>
 
-//    @Multipart
-//    @PUT("patients/upload/{id}")
-//    suspend fun updateWithImage(
-//        @Part files: Array<MultipartBody.Part?>,
-//        @Path("id") id: String,
-//        @Part("name") name: RequestBody,
-//        @Part("description") description: RequestBody,
-//        @Part("id_category") idCategory: RequestBody,
-//        @Part("price") price: RequestBody,
-//        @Part("images_to_update[]") imagesToUpdate: Array<RequestBody?>,
-//    ): Response<Patient>
-//
-//    @PUT("patients/{id}")
-//    suspend fun update(
-//        @Path("id") id: String,
-//        @Body patient: Patient
-//    ): Response<Patient>
-//
-//    @DELETE("patients/{id}")
-//    suspend fun delete(
-//        @Path("id") id: String,
-//    ): Response<Unit>
+    @Multipart
+    @PUT("patients/upload/{id}")
+    suspend fun updateWithImage(
+        @Part files: Array<MultipartBody.Part?>,
+        @Path("id") id: String,
+        @Part("name") name: RequestBody,
+        @Part("description") description: RequestBody,
+        @Part("id_clinic") idClinic: RequestBody,
+        @Part("weight") weight: RequestBody,
+        @Part("age") age: RequestBody,
+        @Part("images_to_update[]") imagesToUpdate: Array<RequestBody?>,
+    ): Response<Patient>
+
+    @PUT("patients/{id}")
+    suspend fun update(
+        @Path("id") id: String,
+        @Body patient: Patient
+    ): Response<Patient>
+
+    @DELETE("patients/{id}")
+    suspend fun delete(
+        @Path("id") id: String,
+    ): Response<Unit>
 
 }

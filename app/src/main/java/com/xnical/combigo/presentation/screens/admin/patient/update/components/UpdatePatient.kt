@@ -1,23 +1,23 @@
-package com.xnical.combigo.presentation.screens.client.clinic.list.componets
+package com.xnical.combigo.presentation.screens.admin.patient.update.components
 
 import android.widget.Toast
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.presentation.components.ProgressBar
-import com.xnical.combigo.presentation.screens.client.clinic.list.ClientClinicListViewModel
+import com.xnical.combigo.presentation.screens.admin.patient.create.AdminPatientCreateViewModel
 
 @Composable
-fun GetClinics(paddingValues: PaddingValues, navController: NavHostController, vm: ClientClinicListViewModel = hiltViewModel()) {
-    when(val response = vm.clinicsResponse) {
+fun UpdatePatient(vm: AdminPatientCreateViewModel = hiltViewModel()) {
+
+    when(val response = vm.patientResponse) {
         Resource.Loading -> {
             ProgressBar()
         }
         is Resource.Success -> {
-            ClientClinicListContent(paddingValues, navController, clinics = response.data )
+            // 401 TOKEN
+            Toast.makeText(LocalContext.current, "Los datos se han actualizado correctamete", Toast.LENGTH_LONG).show()
         }
         is Resource.Failure -> {
             Toast.makeText(LocalContext.current, response.message, Toast.LENGTH_LONG).show()
@@ -28,4 +28,5 @@ fun GetClinics(paddingValues: PaddingValues, navController: NavHostController, v
             }
         }
     }
+
 }

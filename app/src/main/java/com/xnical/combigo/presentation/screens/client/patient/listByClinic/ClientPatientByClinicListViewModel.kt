@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.admin.patient.list
+package com.xnical.combigo.presentation.screens.client.patient.listByClinic
 
 import android.util.Log
 import androidx.compose.runtime.*
@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AdminPatientListViewModel @Inject constructor(
+class ClientPatientByClinicListViewModel @Inject constructor(
     private val patientsUseCase: PatientsUseCase,
     private val savedStateHandle: SavedStateHandle,
 ): ViewModel(){
@@ -36,14 +36,9 @@ class AdminPatientListViewModel @Inject constructor(
         patientsResponse = Resource.Loading
         patientsUseCase.findByClinic(clinic.id!!).collect(){
             patientsResponse = it
-            Log.d("AdminPatientListViewModel", "Data: ${patientsResponse}")
+            Log.d("ClientPatientByClinicViewModel", "Data: ${patientsResponse}")
         }
     }
 
-    fun deletePatient(id: String) = viewModelScope.launch {
-        patientDeleteResponse = Resource.Loading
-        val result = patientsUseCase.deletePatient(id)
-        patientDeleteResponse = result
-    }
 
 }

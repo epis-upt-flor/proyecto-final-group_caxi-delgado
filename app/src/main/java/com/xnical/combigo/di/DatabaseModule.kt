@@ -3,6 +3,7 @@ package com.xnical.combigo.di
 import android.app.Application
 import androidx.room.Room
 import com.xnical.combigo.data.dataSource.local.dao.ClinicsDao
+import com.xnical.combigo.data.dataSource.local.dao.PatientsDao
 import com.xnical.combigo.data.dataSource.local.db.AppDB
 import dagger.Module
 import dagger.Provides
@@ -21,4 +22,8 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideClinicsDao(db: AppDB): ClinicsDao = db.clinicsDao()
+
+    @Provides
+    @Singleton
+    fun providePatientsDao(db: AppDB): PatientsDao = db.patientsDao()
 }

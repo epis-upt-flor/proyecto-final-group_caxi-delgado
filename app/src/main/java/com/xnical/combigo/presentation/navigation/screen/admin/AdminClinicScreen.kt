@@ -14,4 +14,8 @@ sealed class AdminClinicScreen(val route : String){
     object PatientCreate : AdminClinicScreen("admin/clinic/patients/create/{clinic}"){
         fun passClinic(clinic: String) = "admin/clinic/patients/create/$clinic"
     }
+
+    object PatientUpdate : AdminClinicScreen("admin/clinic/patients/update/{patient}"){
+        fun passPatient(patient: String) = "admin/clinic/patients/update/$patient"
+    }
 }

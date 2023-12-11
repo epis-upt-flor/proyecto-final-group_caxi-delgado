@@ -10,6 +10,6 @@ interface PatientsRemoteDataSource {
     suspend fun findByClinic(idClinic: String): Response<List<Patient>>
     suspend fun create(patient: Patient, files: List<File>): Response<Patient>
     suspend fun updateWithImage(id: String, patient: Patient, files: List<File>?): Response<Patient>
-    suspend fun update(id: String, product: Patient): Response<Patient>
+    suspend fun update(id: String, patient: Patient): Response<Patient>
     suspend fun delete(id: String): Response<Unit>
 }
