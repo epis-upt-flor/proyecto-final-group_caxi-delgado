@@ -63,7 +63,7 @@ fun AdminPatientListItem(navController: NavHostController, patient: Patient, vm:
                 )
                 Spacer(modifier = Modifier.height(5.dp))
                 Text(
-                    text = patient.weight.toString() + "$",
+                    text = patient.weight.toString() + " kg",
                     color = Color.Black,
                     fontSize = 13.sp
                 )

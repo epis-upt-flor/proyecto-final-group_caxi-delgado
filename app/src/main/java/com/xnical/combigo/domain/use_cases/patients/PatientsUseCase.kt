@@ -6,5 +6,6 @@ data class PatientsUseCase(
     val findAll: FindAllUseCase,
     val updatePatient: UpdatePatientUseCase,
     val updatePatientWithImage: UpdatePatientWithImageUseCase,
-    val deletePatient: DeletePatientUseCase
+    val deletePatient: DeletePatientUseCase,
+    val findByName: FindByNameUseCase,
 )

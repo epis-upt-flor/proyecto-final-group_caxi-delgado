@@ -21,6 +21,7 @@ import com.xnical.combigo.domain.use_cases.patients.CreatePatientUseCase
 import com.xnical.combigo.domain.use_cases.patients.DeletePatientUseCase
 import com.xnical.combigo.domain.use_cases.patients.FindAllUseCase
 import com.xnical.combigo.domain.use_cases.patients.FindByClinicUseCase
+import com.xnical.combigo.domain.use_cases.patients.FindByNameUseCase
 import com.xnical.combigo.domain.use_cases.patients.PatientsUseCase
 import com.xnical.combigo.domain.use_cases.patients.UpdatePatientUseCase
 import com.xnical.combigo.domain.use_cases.patients.UpdatePatientWithImageUseCase
@@ -68,7 +69,8 @@ object UseCaseModule {
         findAll = FindAllUseCase(patientsRepository),
         updatePatient = UpdatePatientUseCase(patientsRepository),
         updatePatientWithImage = UpdatePatientWithImageUseCase(patientsRepository),
-        deletePatient = DeletePatientUseCase(patientsRepository)
+        deletePatient = DeletePatientUseCase(patientsRepository),
+        findByName = FindByNameUseCase(patientsRepository)
     )
 
 

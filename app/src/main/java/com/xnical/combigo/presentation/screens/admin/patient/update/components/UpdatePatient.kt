@@ -7,9 +7,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.presentation.components.ProgressBar
 import com.xnical.combigo.presentation.screens.admin.patient.create.AdminPatientCreateViewModel
+import com.xnical.combigo.presentation.screens.admin.patient.update.AdminPatientUpdateViewModel
 
 @Composable
-fun UpdatePatient(vm: AdminPatientCreateViewModel = hiltViewModel()) {
+fun UpdatePatient(vm: AdminPatientUpdateViewModel = hiltViewModel()) {
 
     when(val response = vm.patientResponse) {
         Resource.Loading -> {

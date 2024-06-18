@@ -54,7 +54,7 @@ class AdminPatientUpdateViewModel @Inject constructor(
         )
     }
 
-    fun UpdatePatient() = viewModelScope.launch {
+    fun updatePatient() = viewModelScope.launch {
         patientResponse = Resource.Loading
         if (file1 == null && file2 == null) {
 

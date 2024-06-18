@@ -173,7 +173,7 @@ fun AdminPatientUpdateContent(paddingValues: PaddingValues, vm: AdminPatientUpda
                 DefaultButton(
                     modifier = Modifier.fillMaxWidth(),
                     text = "Actualizar paciente",
-                    onClick = { vm.UpdatePatient() }
+                    onClick = { vm.updatePatient() }
                 )
             }
 

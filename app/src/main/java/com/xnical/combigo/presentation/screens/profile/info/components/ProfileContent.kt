@@ -45,7 +45,7 @@ fun ProfileContent(paddingValues: PaddingValues, navController: NavHostControlle
         .padding(bottom = 55.dp)) {
         Image(
             modifier = Modifier.fillMaxSize(),
-            painter = painterResource(id = R.drawable.banner_profile),
+            painter = painterResource(id = R.drawable.banner24),
             contentDescription = "",
             contentScale = ContentScale.Crop,
             colorFilter = ColorFilter.colorMatrix(
@@ -91,7 +91,7 @@ fun ProfileContent(paddingValues: PaddingValues, navController: NavHostControlle
             if (!vm.user?.image.isNullOrBlank()) {
                 AsyncImage(
                     modifier = Modifier
-                        .size(150.dp)
+                        .size(250.dp)
                         .clip(CircleShape)
                         .align(Alignment.CenterHorizontally),
                     model = vm.user?.image,
@@ -102,7 +102,7 @@ fun ProfileContent(paddingValues: PaddingValues, navController: NavHostControlle
             else {
                 Image(
                     modifier = Modifier
-                        .size(150.dp)
+                        .size(250.dp)
                         .clip(CircleShape)
                         .align(Alignment.CenterHorizontally),
                     painter = painterResource(id = R.drawable.user_image),

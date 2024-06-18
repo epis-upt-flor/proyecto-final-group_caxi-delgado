@@ -13,9 +13,7 @@ import java.io.File
 class PatientsRemoteDataSourceImpl(private val patientsService: PatientsService): PatientsRemoteDataSource {
     override suspend fun findAll(): Response<List<Patient>> = patientsService.findAll()
 
-    override suspend fun findByName(name: String): Response<List<Patient>> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun findByName(name: String): Response<List<Patient>> = patientsService.findByName(name)
 
     override suspend fun findByClinic(idClinic: String): Response<List<Patient>> = patientsService.findByClinic(idClinic)
 

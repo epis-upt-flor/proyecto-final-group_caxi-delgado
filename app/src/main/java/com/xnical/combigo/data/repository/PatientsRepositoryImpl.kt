@@ -76,8 +76,8 @@ class PatientsRepositoryImpl(
         }
     }.flowOn(Dispatchers.IO)
 
-    override fun findByName(name: String): Flow<Resource<List<Patient>>> {
-        TODO("Not yet implemented")
+    override fun findByName(name: String): Flow<Resource<List<Patient>>> = flow {
+        emit(ResponseToRequest.send(remoteDataSource.findByName(name)))
     }
 
     override suspend fun create(patient: Patient, files: List<File>): Resource<Patient> {

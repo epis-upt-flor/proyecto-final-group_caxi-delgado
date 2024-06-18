@@ -28,4 +28,16 @@ class ClientPatientListViewModel @Inject constructor(private val patientsUseCase
             patientsResponse = it
         }
     }
+
+    fun getPatientsByName(name: String) = viewModelScope.launch {
+        patientsResponse = Resource.Loading
+        patientsUseCase.findByName(name).collect() {
+            Log.d("ByName", "Data: $it")
+            patientsResponse = it
+        }
+    }
+
+    fun onSearchInput(value: String) {
+        search = value
+    }
 }

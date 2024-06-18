@@ -21,6 +21,11 @@ interface PatientsService {
         @Path("id_clinic") idClinic: String
     ): Response<List<Patient>>
 
+    @GET("patients/search/{name}")
+    suspend fun findByName(
+        @Path("name") name: String
+    ): Response<List<Patient>>
+
     @GET("patients")
     suspend fun findAll(): Response<List<Patient>>
 
