@@ -20,7 +20,7 @@ fun ClientNavGraph(navController: NavHostController){
         startDestination = ClientScreen.PatientList.route
     ){
         composable(route = ClientScreen.PatientList.route) {
-            ClientPatientListScreen()
+            ClientPatientListScreen(navController)
         }
 
         composable(route = ClientScreen.ClinicList.route) {
@@ -32,5 +32,8 @@ fun ClientNavGraph(navController: NavHostController){
         }
 
         ProfileNavGraph(navController)
+
+        ClientClinicNavGraph(navController)
+        ClientPatientNavGraph(navController)
     }
 }

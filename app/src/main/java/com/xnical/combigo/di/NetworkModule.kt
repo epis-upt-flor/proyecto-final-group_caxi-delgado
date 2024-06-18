@@ -4,6 +4,7 @@ import com.xnical.combigo.core.Config
 import com.xnical.combigo.data.dataSource.local.datastore.AuthDatastore
 import com.xnical.combigo.data.dataSource.remote.service.AuthService
 import com.xnical.combigo.data.dataSource.remote.service.ClinicsService
+import com.xnical.combigo.data.dataSource.remote.service.PatientsService
 import com.xnical.combigo.data.dataSource.remote.service.UsersService
 import dagger.Module
 import dagger.Provides
@@ -58,6 +59,12 @@ object NetworkModule {
     @Singleton
     fun provideClinicsService(retrofit: Retrofit): ClinicsService {
         return retrofit.create(ClinicsService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun providePatientsService(retrofit: Retrofit): PatientsService {
+        return retrofit.create(PatientsService::class.java)
     }
 
 }

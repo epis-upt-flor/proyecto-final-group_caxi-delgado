@@ -14,7 +14,7 @@ fun AdminClinicCreateScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             DefaultTopBar(
-                title = "Actualizar Clinica",
+                title = "Nueva Clinica",
                 upAvailable = true,
                 navController = navController
             )

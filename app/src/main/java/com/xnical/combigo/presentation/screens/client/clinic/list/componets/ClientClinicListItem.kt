@@ -17,14 +17,15 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.xnical.combigo.domain.model.Clinic
+import com.xnical.combigo.presentation.navigation.screen.client.ClientClinicScreen
 
 @Composable
 fun ClientClinicListItem(navController: NavHostController, clinic: Clinic){
 
     Card(
         modifier = Modifier
-            .padding(bottom = 15.dp),
-            //.clickable { navController.navigate(route = ClientClinicScreen.ProductList.passCategory(category.toJson())) },
+            .padding(bottom = 15.dp)
+            .clickable { navController.navigate(route = ClientClinicScreen.PatientList.passClinic(clinic.toJson())) },
         elevation = 4.dp,
         shape = RoundedCornerShape(20.dp)
     ) {

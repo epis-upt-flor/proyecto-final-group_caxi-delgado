@@ -1,4 +1,4 @@
-package com.xnical.combigo.presentation.screens.client
+package com.xnical.combigo.presentation.screens.client.clinic.list
 
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel

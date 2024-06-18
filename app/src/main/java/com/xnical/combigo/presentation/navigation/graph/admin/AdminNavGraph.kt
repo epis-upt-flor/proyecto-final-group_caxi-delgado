@@ -17,11 +17,11 @@ fun AdminNavGraph(navController: NavHostController){
     NavHost(
         navController = navController,
         route = Graph.ADMIN,
-        startDestination = AdminScreen.PatientList.route
+        startDestination = AdminScreen.ClinicList.route
     ){
-        composable(route = AdminScreen.PatientList.route) {
-            AdminPatientListScreen()
-        }
+       //composable(route = AdminScreen.PatientList.route) {
+        //    AdminPatientListScreen()
+        //}
 
         composable(route = AdminScreen.ClinicList.route) {
             AdminClinicListScreen(navController)

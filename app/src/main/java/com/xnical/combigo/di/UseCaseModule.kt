@@ -2,6 +2,7 @@ package com.xnical.combigo.di
 
 import com.xnical.combigo.domain.repository.AuthRepository
 import com.xnical.combigo.domain.repository.ClinicsRepository
+import com.xnical.combigo.domain.repository.PatientsRepository
 import com.xnical.combigo.domain.repository.UsersRepository
 import com.xnical.combigo.domain.use_cases.auth.AuthUseCase
 import com.xnical.combigo.domain.use_cases.auth.GetSessionDataUseCase
@@ -16,6 +17,14 @@ import com.xnical.combigo.domain.use_cases.clinics.DeleteClinicUseCase
 import com.xnical.combigo.domain.use_cases.clinics.GetClinicUseCase
 import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicUseCase
 import com.xnical.combigo.domain.use_cases.clinics.UpdateClinicWithImageUseCase
+import com.xnical.combigo.domain.use_cases.patients.CreatePatientUseCase
+import com.xnical.combigo.domain.use_cases.patients.DeletePatientUseCase
+import com.xnical.combigo.domain.use_cases.patients.FindAllUseCase
+import com.xnical.combigo.domain.use_cases.patients.FindByClinicUseCase
+import com.xnical.combigo.domain.use_cases.patients.FindByNameUseCase
+import com.xnical.combigo.domain.use_cases.patients.PatientsUseCase
+import com.xnical.combigo.domain.use_cases.patients.UpdatePatientUseCase
+import com.xnical.combigo.domain.use_cases.patients.UpdatePatientWithImageUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserUseCase
 import com.xnical.combigo.domain.use_cases.users.UpdateUserWithImageUseCase
 import com.xnical.combigo.domain.use_cases.users.UsersUseCase
@@ -52,5 +61,17 @@ object UseCaseModule {
         updateClinicWithImage = UpdateClinicWithImageUseCase(clinicsRepository),
         deleteClinic = DeleteClinicUseCase(clinicsRepository)
     )
+
+    @Provides
+    fun providePatientsUseCase(patientsRepository: PatientsRepository) = PatientsUseCase(
+        createPatient = CreatePatientUseCase(patientsRepository),
+        findByClinic = FindByClinicUseCase(patientsRepository),
+        findAll = FindAllUseCase(patientsRepository),
+        updatePatient = UpdatePatientUseCase(patientsRepository),
+        updatePatientWithImage = UpdatePatientWithImageUseCase(patientsRepository),
+        deletePatient = DeletePatientUseCase(patientsRepository),
+        findByName = FindByNameUseCase(patientsRepository)
+    )
+
 
 }

@@ -3,14 +3,18 @@ package com.xnical.combigo.di
 
 import com.xnical.combigo.data.dataSource.local.AuthLocalDataSource
 import com.xnical.combigo.data.dataSource.local.ClinicsLocalDataSource
+import com.xnical.combigo.data.dataSource.local.PatientsLocalDataSource
 import com.xnical.combigo.data.dataSource.remote.AuthRemoteDataSource
 import com.xnical.combigo.data.repository.AuthRepositoryImpl
 import com.xnical.combigo.data.repository.ClinicsRepositoryImpl
 import com.xnical.combigo.data.repository.UsersRepositoryImpl
 import com.xnical.combigo.data.dataSource.remote.ClinicsRemoteDataSource
+import com.xnical.combigo.data.dataSource.remote.PatientsRemoteDataSource
 import com.xnical.combigo.data.dataSource.remote.UsersRemoteDataSource
+import com.xnical.combigo.data.repository.PatientsRepositoryImpl
 import com.xnical.combigo.domain.repository.AuthRepository
 import com.xnical.combigo.domain.repository.ClinicsRepository
+import com.xnical.combigo.domain.repository.PatientsRepository
 import com.xnical.combigo.domain.repository.UsersRepository
 import dagger.Module
 import dagger.Provides
@@ -37,4 +41,10 @@ object RepositoryModule {
         clinicsRemoteDataSource: ClinicsRemoteDataSource,
         clinicsLocalDataSource: ClinicsLocalDataSource
     ): ClinicsRepository = ClinicsRepositoryImpl(clinicsRemoteDataSource, clinicsLocalDataSource)
+
+    @Provides
+    fun providePatientsRepository(
+        patientsRemoteDataSource: PatientsRemoteDataSource,
+        patientsLocalDataSource: PatientsLocalDataSource
+    ): PatientsRepository = PatientsRepositoryImpl(patientsRemoteDataSource, patientsLocalDataSource)
 }

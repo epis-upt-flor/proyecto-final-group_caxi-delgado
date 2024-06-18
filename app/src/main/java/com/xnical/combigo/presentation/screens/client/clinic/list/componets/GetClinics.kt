@@ -8,8 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.xnical.combigo.domain.util.Resource
 import com.xnical.combigo.presentation.components.ProgressBar
-import com.xnical.combigo.presentation.screens.admin.clinic.list.AdminClinicListViewModel
-import com.xnical.combigo.presentation.screens.client.ClientClinicListViewModel
+import com.xnical.combigo.presentation.screens.client.clinic.list.ClientClinicListViewModel
 
 @Composable
 fun GetClinics(paddingValues: PaddingValues, navController: NavHostController, vm: ClientClinicListViewModel = hiltViewModel()) {
